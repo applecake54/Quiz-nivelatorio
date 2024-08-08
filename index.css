@@ -1,0 +1,66 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #F2F5F9;
+    color: #030616;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.game-container {
+    text-align: center;
+    background-color: #FFFFFF;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #7429C6;
+}
+
+.word-scramble {
+    margin: 20px 0;
+}
+
+.scrambled-word {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #C951E7;
+}
+
+.word-input {
+    display: flex;
+    justify-content: center;
+}
+
+.word-input input {
+    width: 30px;
+    height: 40px;
+    margin: 0 5px;
+    font-size: 24px;
+    text-align: center;
+    border: 1px solid #97A3B6;
+    border-radius: 5px;
+}
+
+.game-controls button {
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: #672171;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.game-controls button:hover {
+    background-color: #4A5567;
+}
+
+.game-status {
+    margin-top: 20px;
+    color: #97A3B6;
+}

@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
         return word.split('').sort(() => Math.random() - 0.5).join('');
     }
 
-    function initializeGame() {
+    function initialize() {
         currentWord = words[Math.floor(Math.random() * words.length)];
         scrambledWord = scramble(currentWord);
         document.getElementById('scrambled-word').textContent = scrambledWord;
@@ -42,16 +42,16 @@ document.addEventListener('DOMContentLoaded', function() {
         updateStatus();
 
         
-        if (isGameComplete()) {
+        if (GameComplete()) {
             alert('Yupi juju Éxito');
-            initializeGame();
+            initialize();
             return; 
         }
 
        
         if (tries >= 5 || mistakes >= 6) {
             alert('Oh nonono juego terminado. La palabra era: ' + currentWord);
-            initializeGame();
+            initialize();
             return;
         }
 
@@ -71,13 +71,13 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    function isGameComplete() {
+    function GameComplete() {
         const inputs = document.querySelectorAll('.word-input input');
         tries += 1;
         return Array.from(inputs).every((input, index) => input.value.toLowerCase() === currentWord[index].toLowerCase());
     }
 
-    document.getElementById('random-button').addEventListener('click', initializeGame);
+    document.getElementById('random-button').addEventListener('click', initialize);
 
     document.getElementById('reset-button').addEventListener('click', function() {
         tries = 0;
@@ -86,5 +86,5 @@ document.addEventListener('DOMContentLoaded', function() {
         resetInputs();
     });
 
-    initializeGame();
+    initialize();
 });
